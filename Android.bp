@@ -1,0 +1,14 @@
+soong_namespace {
+}
+
+cc_library_static {
+    name: "libudfps_extension.mona",
+    srcs: ["udfps/UdfpsExtension.cpp"],
+    include_dirs: [
+        "frameworks/native/services/surfaceflinger/CompositionEngine/include",
+        "kernel/motorola/sm6475-modules/qcom/opensource/display-drivers/include/uapi",
+    ],
+    header_libs: ["generated_kernel_headers"],
+    shared_libs: ["libbase"],
+    cflags: ["-Wall", "-Wextra", "-Werror"],
+}
